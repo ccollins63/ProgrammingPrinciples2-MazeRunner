@@ -9,7 +9,7 @@ public class Maze
 
     public Maze(int[][] array)
     {
-        this.maze = maze;
+        this.maze = array;
     }
 
    public void displayMaze()
