@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javax.swing.text.html.ImageView;
 
@@ -23,6 +24,10 @@ public class MazeGUI extends Application {
         block.setFill(Color.BLACK);
         block.setStroke(Color.GRAY);
         path.setFill(Color.TRANSPARENT);
+
+        Pane pane = new Pane();
+
+
 
 
 
