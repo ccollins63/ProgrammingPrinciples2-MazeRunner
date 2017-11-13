@@ -47,7 +47,8 @@ public class Main
             else if (userInput.equals("quit")){break;}
 
             //check for case
-            switch (userInput){
+            switch (userInput)
+            {
                 case "": maze.takeStep(); break;
                 case "f": maze.findExit();
                 default: System.out.println("Error in case statement.");

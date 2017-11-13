@@ -7,7 +7,7 @@ public class Maze
     private int y            = 0;
     private boolean finished = false;
 
-    public Maze(String[][] array)
+    public Maze(int[][] array)
     {
         this.maze = maze;
     }
