@@ -32,40 +32,123 @@ public class Maze
             {
                 if(maze[y][x - 1] == 1)
                 {
-
+                    direction = "West";
+                    x         = x - 1;
+                    break;
                 }
+
                 else if(maze[y + 1][x] == 1)
                 {
-
+                    direction = "South";
+                    y         = y+ 1;
+                    break;
                 }
+
                 else if(maze[y][x + 1] == 1)
                 {
-
+                    direction = "East";
+                    x         = x + 1;
+                    break;
                 }
+
                 else(maze[y - 1][x] == 1)
                 {
-
-                }
-            }
-
-            case "East":
-            {
-
-            }
-
-            case "North":
-            {
-                if(maze[y][x] = 1)
-                {
-
+                    direction = "North";
+                    y         = y + 1;
+                    break;
                 }
             }
 
             case "West":
             {
-                if(maze[y][x] = 1)
+                if(maze[y - 1][x] == 1)
                 {
+                    direction = "North";
+                    y         = y + 1;
+                    break;
+                }
 
+                else if(maze[y][x - 1] == 1)
+                {
+                    direction = "West";
+                    x         = x - 1;
+                    break;
+                }
+
+                else if(maze[y + 1][x] == 1)
+                {
+                    direction = "South";
+                    y         = y+ 1;
+                    break;
+                }
+
+                else(maze[y][x + 1] == 1)
+                {
+                    direction = "East";
+                    x         = x + 1;
+                    break;
+                }
+            }
+
+            case "North":
+            {
+                if(maze[y][x + 1] == 1)
+                {
+                    direction = "East";
+                    x         = x + 1;
+                    break;
+                }
+
+                else if(maze[y - 1][x] == 1)
+                {
+                    direction = "North";
+                    y         = y + 1;
+                    break;
+                }
+
+                else if(maze[y][x - 1] == 1)
+                {
+                    direction = "West";
+                    x         = x - 1;
+                    break;
+                }
+
+                else(maze[y + 1][x] == 1)
+                {
+                    direction = "South";
+                    y         = y+ 1;
+                    break;
+                }
+            }
+
+            case "East":
+            {
+                if(maze[y + 1][x] == 1)
+                {
+                direction = "South";
+                y         = y+ 1;
+                break;
+                }
+
+                else if(maze[y][x + 1] == 1)
+                {
+                    direction = "East";
+                    x         = x + 1;
+                    break;
+                }
+
+                else if(maze[y - 1][x] == 1)
+                {
+                    direction = "North";
+                    y         = y + 1;
+                    break;
+                }
+
+                else(maze[y][x - 1] == 1)
+                {
+                    direction = "West";
+                    x         = x - 1;
+                    break;
                 }
             }
         }
