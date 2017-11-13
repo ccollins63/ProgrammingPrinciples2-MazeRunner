@@ -2,7 +2,11 @@
 public class Maze
 {
     private int[][] maze;
+    private String direction = "South";
+    private int x = 2;
+    private int y = 0;
 
+    public Maze(String[][] array)
     {
         this.maze = maze;
     }
@@ -22,7 +26,10 @@ public class Maze
 
     public takeStep()
     {
-        maze[0][2]
+        if(maze[y][x] = 1)
+        {
+
+        }
     }
 
     //public findExit()
