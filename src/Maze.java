@@ -153,6 +153,7 @@ public class Maze
             }
         }
 
+        displayMaze();
     }
 
     //public findExit()
