@@ -56,6 +56,7 @@ public class Maze
             System.out.println("");
         }
 
+        System.out.print("\n" + getDirection() + "\n" + getX() + "\n" + getY());
         System.out.println("_________________________________________________________________________________________");
     }
 
@@ -86,18 +87,13 @@ public class Maze
                 else if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
-                    y         = y + 1;
+                    y         = y - 1;
                 }
 
                 else
                 {
                     finished = true;
                     break;
-                }
-
-                if (finished == false)
-                {
-                    maze[y][x] = 2;
                 }
             }
 
@@ -106,35 +102,30 @@ public class Maze
                 if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
-                    y         = y + 1;
-                    break;
+                    y         = y - 1;
                 }
 
                 else if (maze[y][x - 1] == 1)
                 {
                     direction = "West";
                     x         = x - 1;
-                    break;
                 }
 
                 else if (maze[y + 1][x] == 1)
                 {
                     direction = "South";
                     y         = y + 1;
-                    break;
                 }
 
                 else if (maze[y][x + 1] == 1)
                 {
                     direction = "East";
                     x         = x + 1;
-                    break;
                 }
 
                 else
                 {
                     finished = true;
-                    break;
                 }
             }
 
@@ -144,34 +135,29 @@ public class Maze
                 {
                     direction = "East";
                     x         = x + 1;
-                    break;
                 }
 
                 else if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
-                    y         = y + 1;
-                    break;
+                    y         = y - 1;
                 }
 
                 else if (maze[y][x - 1] == 1)
                 {
                     direction = "West";
                     x         = x - 1;
-                    break;
                 }
 
                 else if (maze[y + 1][x] == 1)
                 {
                     direction = "South";
                     y         = y + 1;
-                    break;
                 }
 
                 else
                 {
                     finished = true;
-                    break;
                 }
             }
 
@@ -181,37 +167,35 @@ public class Maze
                 {
                 direction = "South";
                 y         = y + 1;
-                break;
                 }
 
                 else if (maze[y][x + 1] == 1)
                 {
                     direction = "East";
                     x         = x + 1;
-                    break;
                 }
 
                 else if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
-                    y         = y + 1;
-                    break;
+                    y         = y - 1;
                 }
 
                 else if (maze[y][x - 1] == 1)
                 {
                     direction = "West";
                     x         = x - 1;
-                    break;
                 }
 
                 else
                 {
                     finished = true;
-                    break;
                 }
+
             }
         }
+
+        maze[y][x] = 2;
 
         displayMaze();
     }
