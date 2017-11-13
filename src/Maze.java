@@ -31,28 +31,28 @@ public class Maze
         {
             case "South":
             {
-                if(maze[y][x - 1] == 1)
+                if (maze[y][x - 1] == 1)
                 {
                     direction = "West";
                     x         = x - 1;
                     break;
                 }
 
-                else if(maze[y + 1][x] == 1)
+                else if (maze[y + 1][x] == 1)
                 {
                     direction = "South";
                     y         = y + 1;
                     break;
                 }
 
-                else if(maze[y][x + 1] == 1)
+                else if (maze[y][x + 1] == 1)
                 {
                     direction = "East";
                     x         = x + 1;
                     break;
                 }
 
-                else if(maze[y - 1][x] == 1)
+                else if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
                     y         = y + 1;
@@ -68,28 +68,28 @@ public class Maze
 
             case "West":
             {
-                if(maze[y - 1][x] == 1)
+                if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
                     y         = y + 1;
                     break;
                 }
 
-                else if(maze[y][x - 1] == 1)
+                else if (maze[y][x - 1] == 1)
                 {
                     direction = "West";
                     x         = x - 1;
                     break;
                 }
 
-                else if(maze[y + 1][x] == 1)
+                else if (maze[y + 1][x] == 1)
                 {
                     direction = "South";
                     y         = y + 1;
                     break;
                 }
 
-                else if(maze[y][x + 1] == 1)
+                else if (maze[y][x + 1] == 1)
                 {
                     direction = "East";
                     x         = x + 1;
@@ -105,28 +105,28 @@ public class Maze
 
             case "North":
             {
-                if(maze[y][x + 1] == 1)
+                if (maze[y][x + 1] == 1)
                 {
                     direction = "East";
                     x         = x + 1;
                     break;
                 }
 
-                else if(maze[y - 1][x] == 1)
+                else if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
                     y         = y + 1;
                     break;
                 }
 
-                else if(maze[y][x - 1] == 1)
+                else if (maze[y][x - 1] == 1)
                 {
                     direction = "West";
                     x         = x - 1;
                     break;
                 }
 
-                else if(maze[y + 1][x] == 1)
+                else if (maze[y + 1][x] == 1)
                 {
                     direction = "South";
                     y         = y + 1;
@@ -142,28 +142,28 @@ public class Maze
 
             case "East":
             {
-                if(maze[y + 1][x] == 1)
+                if (maze[y + 1][x] == 1)
                 {
                 direction = "South";
                 y         = y + 1;
                 break;
                 }
 
-                else if(maze[y][x + 1] == 1)
+                else if (maze[y][x + 1] == 1)
                 {
                     direction = "East";
                     x         = x + 1;
                     break;
                 }
 
-                else if(maze[y - 1][x] == 1)
+                else if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
                     y         = y + 1;
                     break;
                 }
 
-                else if(maze[y][x - 1] == 1)
+                else if (maze[y][x - 1] == 1)
                 {
                     direction = "West";
                     x         = x - 1;
@@ -183,7 +183,7 @@ public class Maze
 
     public void findExit()
     {
-        while(finished)
+        while (finished)
         {
             takeStep();
         }
