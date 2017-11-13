@@ -44,7 +44,7 @@ public class Main
             {
                 while (!userInput.equals("s") && !userInput.equals("quit") && !userInput.equals("f"))
                 {
-                    System.out.println("Invalid input detected.\nPress ENTER to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
+                    System.out.println("Invalid input detected.\nType \"s\" to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
                     userInput = input.next().toLowerCase();
                 }
             }
