@@ -29,7 +29,5 @@ public class Main
                 {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
 
         Maze mazeM = new Maze();
-
-        System.out.println(maze);
     }
 }
