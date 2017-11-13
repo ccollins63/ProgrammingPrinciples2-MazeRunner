@@ -9,11 +9,11 @@ public class Maze
 
    public void displayMaze()
     {
-       for (int i = 0; i < maze.length; i++)
+       for (int row = 0; row < maze.length; row++)
         {
-            for (int j = 0; j < maze[i].length; j++)
+            for (int column = 0; column < maze[row].length; column++)
             {
-                System.out.print(maze[i][j]);
+                System.out.print(maze[row][column]);
             }
 
             System.out.println("");
@@ -22,7 +22,7 @@ public class Maze
 
     public takeStep()
     {
-
+        maze[0][2]
     }
 
     //public findExit()
