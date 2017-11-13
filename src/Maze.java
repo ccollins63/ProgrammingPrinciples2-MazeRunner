@@ -12,9 +12,41 @@ public class Maze
         this.maze = array;
     }
 
-   public void displayMaze()
+    public String getDirection()
     {
-       for (int row = 0; row < maze.length; row++)
+        return direction;
+    }
+
+    public void setDirection(String direction)
+    {
+        this.direction = direction;
+    }
+
+    public int getX()
+    {
+        return x;
+    }
+
+    public void setX(int x)
+    {
+        this.x = x;
+    }
+
+    public int getY()
+    {
+        return y;
+    }
+
+    public void setY(int y)
+    {
+        this.y = y;
+    }
+
+    public void displayMaze()
+    {
+        System.out.println("_________________________________________________________________________________________");
+
+        for (int row = 0; row < maze.length; row++)
         {
             for (int column = 0; column < maze[row].length; column++)
             {
@@ -23,6 +55,8 @@ public class Maze
 
             System.out.println("");
         }
+
+        System.out.println("_________________________________________________________________________________________");
     }
 
     public void takeStep()
@@ -35,34 +69,35 @@ public class Maze
                 {
                     direction = "West";
                     x         = x - 1;
-                    break;
                 }
 
                 else if (maze[y + 1][x] == 1)
                 {
                     direction = "South";
                     y         = y + 1;
-                    break;
                 }
 
                 else if (maze[y][x + 1] == 1)
                 {
                     direction = "East";
                     x         = x + 1;
-                    break;
                 }
 
                 else if (maze[y - 1][x] == 1)
                 {
                     direction = "North";
                     y         = y + 1;
-                    break;
                 }
 
                 else
                 {
                     finished = true;
                     break;
+                }
+
+                if (finished == false)
+                {
+                    maze[y][x] = 2;
                 }
             }
 
