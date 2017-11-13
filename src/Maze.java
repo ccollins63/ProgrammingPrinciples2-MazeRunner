@@ -40,7 +40,7 @@ public class Maze
                 else if(maze[y + 1][x] == 1)
                 {
                     direction = "South";
-                    y         = y+ 1;
+                    y         = y + 1;
                     break;
                 }
 
@@ -78,7 +78,7 @@ public class Maze
                 else if(maze[y + 1][x] == 1)
                 {
                     direction = "South";
-                    y         = y+ 1;
+                    y         = y + 1;
                     break;
                 }
 
@@ -116,7 +116,7 @@ public class Maze
                 else(maze[y + 1][x] == 1)
                 {
                     direction = "South";
-                    y         = y+ 1;
+                    y         = y + 1;
                     break;
                 }
             }
@@ -126,7 +126,7 @@ public class Maze
                 if(maze[y + 1][x] == 1)
                 {
                 direction = "South";
-                y         = y+ 1;
+                y         = y + 1;
                 break;
                 }
 
