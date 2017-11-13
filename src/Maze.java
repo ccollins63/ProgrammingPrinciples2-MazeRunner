@@ -20,8 +20,9 @@ public class Maze
         }
     }
 
-    //public takeStep()
+    public takeStep()
     {
+
     }
 
     //public findExit()
