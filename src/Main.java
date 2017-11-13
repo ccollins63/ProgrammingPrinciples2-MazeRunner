@@ -33,7 +33,7 @@ public class Main
         //get user input to determine what user wants to do
         while (!userInput.equals("quit")){
             //display maze, then determine what user wants to do
-            maze.displayMaze();
+            maze1.displayMaze();
             System.out.println("Press ENTER to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
             userInput = input.next().toLowerCase();
 
@@ -49,8 +49,8 @@ public class Main
             //check for case
             switch (userInput)
             {
-                case "": maze.takeStep(); break;
-                case "f": maze.findExit();
+                case "": maze1.takeStep(); break;
+                case "f": maze1.findExit();
                 default: System.out.println("Error in case statement.");
             }
         }
