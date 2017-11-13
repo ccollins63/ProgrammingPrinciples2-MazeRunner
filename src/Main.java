@@ -49,7 +49,7 @@ public class Main
                 }
             }
 
-            else if (userInput.equals("quit"))
+            if (userInput.equals("quit"))
             {
                 break;
             }
