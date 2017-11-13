@@ -26,10 +26,50 @@ public class Maze
 
     public takeStep()
     {
-        if(maze[y][x] = 1)
+        switch(direction)
         {
+            case "South":
+            {
+                if(maze[y][x - 1] == 1)
+                {
 
+                }
+                else if(maze[y + 1][x] == 1)
+                {
+
+                }
+                else if(maze[y][x + 1] == 1)
+                {
+
+                }
+                else(maze[y - 1][x] == 1)
+                {
+
+                }
+            }
+
+            case "East":
+            {
+
+            }
+
+            case "North":
+            {
+                if(maze[y][x] = 1)
+                {
+
+                }
+            }
+
+            case "West":
+            {
+                if(maze[y][x] = 1)
+                {
+
+                }
+            }
         }
+
     }
 
     //public findExit()
