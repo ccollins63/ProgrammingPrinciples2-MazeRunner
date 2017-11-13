@@ -34,14 +34,15 @@ public class Main
         while (!userInput.equals("quit"))
         {
             //display maze, then determine what user wants to do
+
             maze1.displayMaze();
-            System.out.println("Press ENTER to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
+            System.out.println("Type \"s\" to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
             userInput = input.next().toLowerCase();
 
             //check for valid input, then if quit
-            if (!userInput.equals("") && !userInput.equals("quit") && !userInput.equals("f"))
+            if (!userInput.equals("s") && !userInput.equals("quit") && !userInput.equals("f"))
             {
-                while (!userInput.equals("") && !userInput.equals("quit") && !userInput.equals("f"))
+                while (!userInput.equals("s") && !userInput.equals("quit") && !userInput.equals("f"))
                 {
                     System.out.println("Invalid input detected.\nPress ENTER to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
                     userInput = input.next().toLowerCase();
@@ -56,9 +57,23 @@ public class Main
             //check for case
             switch (userInput)
             {
-                case "": maze1.takeStep(); break;
-                case "f": maze1.findExit();
-                default: System.out.println("Error in case statement.");
+                case "s":
+                {
+                    maze1.takeStep();
+                    break;
+                }
+
+                case "f":
+                {
+                    maze1.findExit();
+                    break;
+                }
+
+                default:
+                {
+                    System.out.println("Error in case statement.");
+                    break;
+                }
             }
         }
     }
