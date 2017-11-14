@@ -42,22 +42,32 @@ public class Maze
         this.y = y;
     }
 
-    public void displayMaze()
-    {
-        System.out.println("_________________________________________________________________________________________");
-
-        for (int row = 0; row < maze.length; row++)
+    public void displayMaze(){
         {
-            for (int column = 0; column < maze[row].length; column++)
+            //variable to allow ASCII changes
+            char display = ' ';
+
+            System.out.println("_________________________________________________________________________________________");
+
+            for (int row = 0; row < maze.length; row++)
             {
-                System.out.print(maze[row][column]);
+                for (int column = 0; column < maze[row].length; column++)
+                {
+                    switch (maze[row][column]){
+                        case 0: display = '*'; break;
+                        case 1: display = ' '; break;
+                        case 2: display = '@'; break;
+                        case 3: display = '~';
+                    }
+                    System.out.print(display);
+                }
+
+                System.out.println("");
             }
 
-            System.out.println("");
+            System.out.print("\n" + getDirection() + "\n" + getX() + "\n" + getY());
+            System.out.println("_________________________________________________________________________________________");
         }
-
-        System.out.print("\n" + getDirection() + "\n" + getX() + "\n" + getY());
-        System.out.println("_________________________________________________________________________________________");
     }
 
     public void takeStep()
