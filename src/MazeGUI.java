@@ -1,6 +1,7 @@
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -10,6 +11,8 @@ import javafx.scene.paint.Color;
 import javax.swing.text.html.ImageView;
 
 import javafx.scene.shape.Rectangle;
+
+import java.util.Random;
 
 public class MazeGUI extends Application {
 
@@ -26,6 +29,39 @@ public class MazeGUI extends Application {
         path.setFill(Color.TRANSPARENT);
 
         Pane pane = new Pane();
+
+        //for (int row = 0; row < array.length; row++)
+        {
+           // for (int column = 0; column < array[].length; column++)
+            {
+                switch("maze array right here")
+                {
+                    case 0:
+                    {
+                       // gridPane.add(new javafx.scene.image.ImageView(new Image("image/x.gif")), row , column);
+                        break;
+                    }
+
+                    case 1:
+                    {
+                       // gridPane.add(new javafx.scene.image.ImageView(new Image("image/o.gif")), row , column);
+                        break;
+                    }
+
+                    case 2:
+                    {
+                        //gridPane.add(new javafx.scene.image.ImageView(new Image("image/o.gif")), row , column);
+                        break;
+                    }
+
+                    case 3:
+                    {
+                       // gridPane.add(new javafx.scene.image.ImageView(new Image("image/o.gif")), row , column);
+                        break;
+                    }
+                }
+            }
+        }
 
 
 
