@@ -6,7 +6,7 @@ public class Main
     public static void main(String[] args)
     {
         //get maze array
-        int[][] maze = new int[][]{
+        int[][] mazeArray = new int[][]{
                 {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0},
                 {0,0,1,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0},
@@ -27,15 +27,15 @@ public class Main
 
         //set initial variables
         String userInput = "";
-        Maze maze1       = new Maze(maze);
+        Maze maze1       = new Maze(mazeArray);
         Scanner input    = new Scanner(System.in);
 
         //get user input to determine what user wants to do
         while (!userInput.equals("quit"))
         {
             //display maze, then determine what user wants to do
-
             maze1.displayMaze();
+
             System.out.println("Type \"s\" to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
             userInput = input.next().toLowerCase();
 

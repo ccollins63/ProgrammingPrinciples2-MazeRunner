@@ -1,91 +1,87 @@
-
 import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javax.swing.text.html.ImageView;
-
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.image.ImageView;
 
-import java.util.Random;
-
-public class MazeGUI extends Application {
-
-
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        Rectangle block = new Rectangle(5,5);
-        Rectangle path = new Rectangle(5,5);
-
-        block.setFill(Color.BLACK);
-        block.setStroke(Color.GRAY);
-        path.setFill(Color.TRANSPARENT);
-
-        Pane pane = new Pane();
-
-        //for (int row = 0; row < array.length; row++)
-        {
-           // for (int column = 0; column < array[].length; column++)
+public class MazeGUI extends Application
+{
+    int[][] maze = new int[][]
             {
-                switch("maze array right here")
+                    {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0},
+                    {0,0,1,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0},
+                    {0,0,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,1,0},
+                    {0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0},
+                    {0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0},
+                    {0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0},
+                    {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+            };
+
+    @Override // Override the start method in the Application class
+    public void start(Stage primaryStage) throws Exception
+    {
+        BorderPane border = new BorderPane();
+        GridPane gridPane = new GridPane();
+
+        border.setCenter(gridPane);
+        Rectangle rec = new Rectangle();
+        rec.setFill(Color.GREEN);
+
+        for (int row = 0; row < maze.length; row++)
+        {
+            for (int column = 0; column < maze[row].length; column++)
+            {
+                switch(maze[row][column])
                 {
                     case 0:
                     {
-                       // gridPane.add(new javafx.scene.image.ImageView(new Image("image/x.gif")), row , column);
+                        gridPane.add(rec, row, column);
                         break;
                     }
 
                     case 1:
                     {
-                       // gridPane.add(new javafx.scene.image.ImageView(new Image("image/o.gif")), row , column);
                         break;
                     }
 
                     case 2:
                     {
-                        //gridPane.add(new javafx.scene.image.ImageView(new Image("image/o.gif")), row , column);
+                        gridPane.add(new ImageView(new Image("https://vignette4.wikia.nocookie.net/deathbattlefanon/" +
+                                "images/c/cf/Harry_Potter.png/revision/latest?cb=20151117161832")), row, column);
                         break;
                     }
 
                     case 3:
                     {
-                       // gridPane.add(new javafx.scene.image.ImageView(new Image("image/o.gif")), row , column);
+                        gridPane.add(new ImageView(new Image("http://1000logos.net/wp-content/uploads/2017/02/Harry-Potter-symbol.png")), row, column);
                         break;
                     }
                 }
             }
         }
 
-
-
-
-
-
+            Scene scene = new Scene(border, 500, 500);
+            primaryStage.setTitle("MazeRunner");
+            primaryStage.setScene(scene);
+            primaryStage.show();
     }
 
-    public void DisplayMaze (int[][] array){
-
-        int zero = 0;
-        int one = 1;
-
-        for (int i = 0; i < array.length; i++){
-            for (int j = 0; i <array.length; j++){
-
-                //if (array[i][j] == zero)
-
-            }
-
-
-        }
-
-
-
+    public static void main(String[] args)
+    {
+        launch(args);
     }
 }

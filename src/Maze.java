@@ -12,36 +12,6 @@ public class Maze
         this.maze = array;
     }
 
-    public String getDirection()
-    {
-        return direction;
-    }
-
-    public void setDirection(String direction)
-    {
-        this.direction = direction;
-    }
-
-    public int getX()
-    {
-        return x;
-    }
-
-    public void setX(int x)
-    {
-        this.x = x;
-    }
-
-    public int getY()
-    {
-        return y;
-    }
-
-    public void setY(int y)
-    {
-        this.y = y;
-    }
-
     public void displayMaze(){
         {
             //variable to allow ASCII changes
@@ -53,19 +23,39 @@ public class Maze
             {
                 for (int column = 0; column < maze[row].length; column++)
                 {
-                    switch (maze[row][column]){
-                        case 0: display = '*'; break;
-                        case 1: display = ' '; break;
-                        case 2: display = '@'; break;
-                        case 3: display = '~';
+                    switch (maze[row][column])
+                    {
+                        case 0:
+                        {
+                            display = '*';
+                            break;
+                        }
+
+                        case 1:
+                        {
+                            display = ' ';
+                            break;
+                        }
+
+                        case 2:
+                        {
+                            display = '@';
+                            break;
+                        }
+
+                        case 3:
+                        {
+                            display = '~';
+                            break;
+                        }
                     }
+
                     System.out.print(display);
                 }
 
                 System.out.println("");
             }
 
-            System.out.print("\n" + getDirection() + "\n" + getX() + "\n" + getY());
             System.out.println("_________________________________________________________________________________________");
         }
     }
