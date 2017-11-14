@@ -49,7 +49,11 @@ public class MazeGUI extends Application
                 {
                     case 0:
                     {
-                        gridPane.add(rec, row, column);
+                        ImageView bushWall = new ImageView(new Image("https://vignette4.wikia.nocookie.net/deathbattlefanon/" +
+                                "images/c/cf/Harry_Potter.png/revision/latest?cb=20151117161832"));
+                        bushWall.setFitHeight(5);
+                        bushWall.setFitWidth(5);
+                        gridPane.add(bushWall, row, column);
                         break;
                     }
 
@@ -60,21 +64,27 @@ public class MazeGUI extends Application
 
                     case 2:
                     {
-                        gridPane.add(new ImageView(new Image("https://vignette4.wikia.nocookie.net/deathbattlefanon/" +
-                                "images/c/cf/Harry_Potter.png/revision/latest?cb=20151117161832")), row, column);
+                        ImageView harryPotter = new ImageView(new Image("https://vignette4.wikia.nocookie.net/deathbattlefanon/" +
+                                "images/c/cf/Harry_Potter.png/revision/latest?cb=20151117161832"));
+                        harryPotter.setFitHeight(5);
+                        harryPotter.setFitWidth(5);
+                        gridPane.add(harryPotter, row, column);
                         break;
                     }
 
                     case 3:
                     {
-                        gridPane.add(new ImageView(new Image("http://1000logos.net/wp-content/uploads/2017/02/Harry-Potter-symbol.png")), row, column);
+                        ImageView trail = new ImageView(new Image("http://1000logos.net/wp-content/uploads/2017/02/Harry-Potter-symbol.png"));
+                        trail.setFitHeight(5);
+                        trail.setFitWidth(5);
+                        gridPane.add(trail, row, column);
                         break;
                     }
                 }
             }
         }
 
-            Scene scene = new Scene(border, 500, 500);
+            Scene scene = new Scene(border, 50, 50);
             primaryStage.setTitle("MazeRunner");
             primaryStage.setScene(scene);
             primaryStage.show();
