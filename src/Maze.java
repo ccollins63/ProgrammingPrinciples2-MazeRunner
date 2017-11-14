@@ -66,25 +66,27 @@ public class Maze
         {
             case "South":
             {
-                if (maze[y][x - 1] == 1)
+                maze[y][x] = 3;
+
+                if ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3))
                 {
                     direction = "West";
                     x         = x - 1;
                 }
 
-                else if (maze[y + 1][x] == 1)
+                else if ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3))
                 {
                     direction = "South";
                     y         = y + 1;
                 }
 
-                else if (maze[y][x + 1] == 1)
+                else if ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3))
                 {
                     direction = "East";
                     x         = x + 1;
                 }
 
-                else if (maze[y - 1][x] == 1)
+                else if ((maze[y - 1][x] == 1) || (maze[y - 1][x] == 3))
                 {
                     direction = "North";
                     y         = y - 1;
@@ -95,29 +97,33 @@ public class Maze
                     finished = true;
                     break;
                 }
+
+                break;
             }
 
             case "West":
             {
-                if (maze[y - 1][x] == 1)
+                maze[y][x] = 3;
+
+                if ((maze[y - 1][x] == 1) || (maze[y - 1][x] == 3))
                 {
                     direction = "North";
                     y         = y - 1;
                 }
 
-                else if (maze[y][x - 1] == 1)
+                else if ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3))
                 {
                     direction = "West";
                     x         = x - 1;
                 }
 
-                else if (maze[y + 1][x] == 1)
+                else if ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3))
                 {
                     direction = "South";
                     y         = y + 1;
                 }
 
-                else if (maze[y][x + 1] == 1)
+                else if ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3))
                 {
                     direction = "East";
                     x         = x + 1;
@@ -127,29 +133,33 @@ public class Maze
                 {
                     finished = true;
                 }
+
+                break;
             }
 
             case "North":
             {
-                if (maze[y][x + 1] == 1)
+                maze[y][x] = 3;
+
+                if ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3))
                 {
                     direction = "East";
                     x         = x + 1;
                 }
 
-                else if (maze[y - 1][x] == 1)
+                else if ((maze[y - 1][x] == 1) || (maze[y -1][x] == 3))
                 {
                     direction = "North";
                     y         = y - 1;
                 }
 
-                else if (maze[y][x - 1] == 1)
+                else if ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3))
                 {
                     direction = "West";
                     x         = x - 1;
                 }
 
-                else if (maze[y + 1][x] == 1)
+                else if ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3))
                 {
                     direction = "South";
                     y         = y + 1;
@@ -159,29 +169,33 @@ public class Maze
                 {
                     finished = true;
                 }
+
+                break;
             }
 
             case "East":
             {
-                if (maze[y + 1][x] == 1)
+                maze[y][x] = 3;
+
+                if ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3))
                 {
                 direction = "South";
                 y         = y + 1;
                 }
 
-                else if (maze[y][x + 1] == 1)
+                else if ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3))
                 {
                     direction = "East";
                     x         = x + 1;
                 }
 
-                else if (maze[y - 1][x] == 1)
+                else if ((maze[y - 1][x] == 1) || (maze[y - 1][x] == 3))
                 {
                     direction = "North";
                     y         = y - 1;
                 }
 
-                else if (maze[y][x - 1] == 1)
+                else if ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3))
                 {
                     direction = "West";
                     x         = x - 1;
@@ -192,6 +206,7 @@ public class Maze
                     finished = true;
                 }
 
+                break;
             }
         }
 
@@ -202,7 +217,7 @@ public class Maze
 
     public void findExit()
     {
-        while (finished)
+        while (!finished)
         {
             takeStep();
         }
