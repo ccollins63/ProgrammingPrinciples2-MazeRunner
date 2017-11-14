@@ -75,41 +75,13 @@ public class MazeGUI extends Application
         {
             for (int column = 0; column < maze[row].length; column++)
             {
-                switch(maze[row][column])
+                if (maze[row][column] == 0)
                 {
-                    case 0:
-                    {
-                        ImageView imageView = new ImageView(new Image("images/gw4.png"));
-                        imageView.setFitWidth(15);
-                        imageView.setFitHeight(15);
-                        gridPane.getChildren().add(imageView);
-                        gridPane.setConstraints(imageView, column, row);
-                        break;
-                    }
-
-                    case 1:
-                    {
-                        break;
-                    }
-
-                    case 2:
-                    {
-                        ImageView imageView = new ImageView(new Image("images/harrypotter.png"));
-                        imageView.setFitWidth(10);
-                        imageView.setFitHeight(10);
-                        gridPane.getChildren().add(imageView);
-                        gridPane.setConstraints(imageView, row, column);
-                        break;
-                    }
-
-                    case 3:
-                    {
-                        ImageView imageView = new ImageView(new Image("images/Harry-Potter-symbol.png"));
-                        imageView.setFitWidth(10);
-                        imageView.setFitHeight(10);
-                        gridPane.getChildren().add(imageView);
-                        gridPane.setConstraints(imageView, row, column);                        break;
-                    }
+                    ImageView imageView = new ImageView(new Image("images/gw4.png"));
+                    imageView.setFitWidth(20);
+                    imageView.setFitHeight(20);
+                    gridPane.getChildren( ).add(imageView);
+                    gridPane.setConstraints(imageView, column, row);
                 }
             }
         }
@@ -117,6 +89,37 @@ public class MazeGUI extends Application
         btStep.setOnAction(event ->
         {
             maze1.takeStep();
+
+            for (int row = 0; row < maze.length; row++)
+            {
+                for (int column = 0; column < maze[row].length; column++)
+                {
+                    ImageView harryPotterMouse = new ImageView(new Image("images/harrypotter.png"));
+                    harryPotterMouse.setFitWidth(20);
+                    harryPotterMouse.setFitHeight(20);
+
+                    ImageView harryPotterTrail = new ImageView(new Image("images/Harry-Potter-symbol.png"));
+                    harryPotterTrail.setFitWidth(15);
+                    harryPotterTrail.setFitHeight(15);
+
+                    switch(maze[row][column])
+                    {
+                        case 2:
+                        {
+                            gridPane.getChildren().add(harryPotterMouse);
+                            gridPane.setConstraints(harryPotterMouse, column, row);
+                        }
+
+                        case 3:
+                        {
+                            gridPane.getChildren().remove(harryPotterMouse);
+                            gridPane.getChildren().add(harryPotterTrail);
+                            gridPane.setConstraints(harryPotterTrail, column, row);
+                        }
+                    }
+
+                }
+            }
         });
 
         btFindPath.setOnAction(event ->
