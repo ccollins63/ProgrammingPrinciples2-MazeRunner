@@ -1,11 +1,14 @@
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.image.ImageView;
 
 public class MazeGUI extends Application
@@ -34,12 +37,39 @@ public class MazeGUI extends Application
     @Override // Override the start method in the Application class
     public void start(Stage primaryStage) throws Exception
     {
+        Maze maze1 = new Maze(maze);
+
         BorderPane border = new BorderPane();
         GridPane gridPane = new GridPane();
-
+        gridPane.setPadding(new Insets(10, 10, 10, 10));
         border.setCenter(gridPane);
-        Rectangle rec = new Rectangle();
-        rec.setFill(Color.GREEN);
+
+        HBox topLeftBox = new HBox();
+        topLeftBox.setAlignment(Pos.CENTER_LEFT);
+        ImageView startHarryPotter = new ImageView(new Image("images/harrypotter.png"));
+        startHarryPotter.setFitWidth(100);
+        startHarryPotter.setFitHeight(100);
+        Text txtStart = new Text("Start");
+        topLeftBox.getChildren().addAll(startHarryPotter, txtStart);
+        border.setTop(topLeftBox);
+
+        VBox rightBox = new VBox();
+        rightBox.setAlignment(Pos.CENTER);
+        rightBox.setSpacing(10);
+        rightBox.setPadding(new Insets(10, 10, 10, 10));
+        Button btStep       = new Button("Step");
+        Button btFindPath   = new Button("Find Path");
+        Button btQuit       = new Button("Quit");
+        rightBox.getChildren().addAll(btStep, btFindPath, btQuit);
+        border.setRight(rightBox);
+
+        HBox bottomBox = new HBox();
+        bottomBox.setAlignment(Pos.CENTER);
+        ImageView triWizardCup = new ImageView(new Image("images/triwizardcup.png"));
+        triWizardCup.setFitHeight(100);
+        triWizardCup.setFitWidth(100);
+        bottomBox.getChildren().add(triWizardCup);
+        border.setBottom(bottomBox);
 
         for (int row = 0; row < maze.length; row++)
         {
@@ -49,10 +79,11 @@ public class MazeGUI extends Application
                 {
                     case 0:
                     {
-                        ImageView bushWall = new ImageView(new Image("/Users/cameron/Documents/GitHub/MazeRunner/src/images/gw4.png"));
-                        bushWall.setFitHeight(5);
-                        bushWall.setFitWidth(5);
-                        gridPane.add(bushWall, row, column);
+                        ImageView imageView = new ImageView(new Image("images/gw4.png"));
+                        imageView.setFitWidth(15);
+                        imageView.setFitHeight(15);
+                        gridPane.getChildren().add(imageView);
+                        gridPane.setConstraints(imageView, column, row);
                         break;
                     }
 
@@ -63,26 +94,37 @@ public class MazeGUI extends Application
 
                     case 2:
                     {
-                        ImageView harryPotter = new ImageView(new Image("/Users/cameron/Documents/GitHub/MazeRunner/src/images/harrypotter.png"));
-                        harryPotter.setFitHeight(5);
-                        harryPotter.setFitWidth(5);
-                        gridPane.add(harryPotter, row, column);
+                        ImageView imageView = new ImageView(new Image("images/harrypotter.png"));
+                        imageView.setFitWidth(10);
+                        imageView.setFitHeight(10);
+                        gridPane.getChildren().add(imageView);
+                        gridPane.setConstraints(imageView, row, column);
                         break;
                     }
 
                     case 3:
                     {
-                        ImageView trail = new ImageView(new Image("/Users/cameron/Documents/GitHub/MazeRunner/src/images/Harry-Potter-symbol.png"));
-                        trail.setFitHeight(5);
-                        trail.setFitWidth(5);
-                        gridPane.add(trail, row, column);
-                        break;
+                        ImageView imageView = new ImageView(new Image("images/Harry-Potter-symbol.png"));
+                        imageView.setFitWidth(10);
+                        imageView.setFitHeight(10);
+                        gridPane.getChildren().add(imageView);
+                        gridPane.setConstraints(imageView, row, column);                        break;
                     }
                 }
             }
         }
 
-            Scene scene = new Scene(border, 100, 100);
+        btStep.setOnAction(event ->
+        {
+            maze1.takeStep();
+        });
+
+        btFindPath.setOnAction(event ->
+        {
+            maze1.findExit();
+        });
+
+            Scene scene = new Scene(border, 750, 500);
             primaryStage.setTitle("MazeRunner");
             primaryStage.setScene(scene);
             primaryStage.show();

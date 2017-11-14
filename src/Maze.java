@@ -51,6 +51,7 @@ public class Maze
                     }
 
                     System.out.print(display);
+                    System.out.print(" ");
                 }
 
                 System.out.println("");
