@@ -66,6 +66,8 @@ public class Maze
         {
             case "South":
             {
+                maze[y][x] = 3;
+
                 if ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3))
                 {
                     direction = "West";
@@ -101,6 +103,8 @@ public class Maze
 
             case "West":
             {
+                maze[y][x] = 3;
+
                 if ((maze[y - 1][x] == 1) || (maze[y - 1][x] == 3))
                 {
                     direction = "North";
@@ -135,6 +139,8 @@ public class Maze
 
             case "North":
             {
+                maze[y][x] = 3;
+
                 if ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3))
                 {
                     direction = "East";
@@ -169,6 +175,8 @@ public class Maze
 
             case "East":
             {
+                maze[y][x] = 3;
+
                 if ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3))
                 {
                 direction = "South";
