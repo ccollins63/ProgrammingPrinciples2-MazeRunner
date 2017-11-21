@@ -1,4 +1,3 @@
-
 public class Maze
 {
     private int[][] maze;
@@ -6,7 +5,6 @@ public class Maze
     private int x             = 2;
     private int y             = 0;
     private boolean finished  = false;
-    private boolean findExit  = false;
     private boolean firstTime = true;
 
     public Maze(int[][] array)
@@ -251,8 +249,6 @@ public class Maze
 
     public void findExit()
     {
-        findExit = true;
-
         while (!finished)
         {
             takeStep();
