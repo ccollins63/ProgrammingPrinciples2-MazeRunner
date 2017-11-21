@@ -31,10 +31,14 @@ public class Main
         Scanner input    = new Scanner(System.in);
 
         //get user input to determine what user wants to do
-        while (!userInput.equals("quit"))
+        while (!maze1.isFinished() && !userInput.equals("quit"))
         {
             //display maze, then determine what user wants to do
-            maze1.displayMaze();
+            if (maze1.isFirstTime())
+            {
+                maze1.displayFirstTime();
+                maze1.displayMaze();
+            }
 
             System.out.println("Type \"s\" to continue, type \"f\" to proceed to end result, or \"quit\" to exit.");
             userInput = input.next().toLowerCase();
@@ -60,12 +64,14 @@ public class Main
                 case "s":
                 {
                     maze1.takeStep();
+                    maze1.displayMaze();
                     break;
                 }
 
                 case "f":
                 {
                     maze1.findExit();
+                    maze1.displayMaze();
                     break;
                 }
 
@@ -76,5 +82,7 @@ public class Main
                 }
             }
         }
+
+        System.out.println("Finished.");
     }
 }
