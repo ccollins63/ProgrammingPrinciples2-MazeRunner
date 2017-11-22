@@ -4,6 +4,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        //obtain usable array, first is the "default" maze
         int[][] mazeArray = new int[][]{
                 {0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0},
@@ -27,6 +28,7 @@ public class Main
         Maze maze1       = new Maze(mazeArray);
         Scanner input    = new Scanner(System.in);
 
+        //set while loop to run until the maze is finished, or the user quits
         while ((!maze1.isFinished()) && (!"quit".equals(userInput)))
         {
             if (maze1.isFirstTime())
@@ -34,6 +36,10 @@ public class Main
                 maze1.displayFirstTime();
                 maze1.displayMaze();
             }
+
+
+            //CRITICAL ERROR: Quit no longer exits. Find why, fix.
+
 
             System.out.println("Type\n'Step' to continue:\n'Find' to proceed to end result:\n'Quit' to exit:\n");
             userInput = input.next().toLowerCase();
