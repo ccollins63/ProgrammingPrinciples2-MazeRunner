@@ -29,7 +29,7 @@ public class Main
         Scanner input    = new Scanner(System.in);
 
         //set while loop to run until the maze is finished, or the user quits
-        while ((!maze1.isFinished()) && (!"quit".equals(userInput)))
+        while ((!maze1.isFinished()) && (!userInput.equals("quit")))
         {
             if (maze1.isFirstTime())
             {
@@ -37,24 +37,24 @@ public class Main
                 maze1.displayMaze();
             }
 
-
-            //CRITICAL ERROR: Quit no longer exits. Find why, fix.
-
-
-            System.out.println("Type\n'Step' to continue:\n'Find' to proceed to end result:\n'Quit' to exit:\n");
+            //get input
+            System.out.println("Type\n\"Step\" to continue:\n\"Find\" to proceed to end result:\n\"Quit\" to exit:\n");
             userInput = input.next().toLowerCase();
 
-            while ((!"step".equals(userInput)) && (!"find".equals(userInput)) && ("quit".equals(userInput)))
+            //check for validity
+            while ((!userInput.equals("step") && (!userInput.equals("find") && (!userInput.equals("quit")))))
             {
-                System.out.println("Invalid input detected.\nType\n'Step' to continue:\n'Find' to proceed to end result:\n'Quit' to exit:\n");
+                System.out.println("Invalid input detected. Type\n\"Step\" to continue:\n\"Find\" to proceed to end result:\n\"Quit\" to exit:\n");
                 userInput = input.next().toLowerCase();
             }
 
-            if ("quit".equals(userInput))
+            //check for quit message
+            if (userInput.equals("quit"))
             {
                 break;
             }
 
+            //determine input
             switch (userInput)
             {
                 case "step":
