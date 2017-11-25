@@ -36,9 +36,19 @@ public class Maze
         return finished;
     }
 
+    //find maze start point
+    public void findStart(){
+        for (int i = 0; i < maze[0].length; i++){
+            if (maze[0][i] == 1){
+                x = i;
+            }
+        }
+    }
+
     //sets display for the initial "start point", turns off "first step" state
     public void displayFirstTime()
     {
+        findStart();
         maze[y][x] = 2;
         firstTime = false;
     }
