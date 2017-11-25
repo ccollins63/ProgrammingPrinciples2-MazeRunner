@@ -9,6 +9,7 @@ public class Maze
 
     public Maze(int[][] array)
     {
+
         this.maze = array;
     }
 
