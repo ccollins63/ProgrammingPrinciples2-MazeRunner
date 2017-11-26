@@ -126,10 +126,6 @@ public class Maze
                 //check bounds, then against x-1 (west). Set new direction.
                 else if ((x > 0) && ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x-1] == 3){
-                        maze[y][x] = 1;
-                    }
 
                     direction = "West";
                     x         = x - 1;
@@ -139,10 +135,7 @@ public class Maze
                 //check bounds, then against y+1 (south). Set new direction.
                 else if ((y < (maze.length - 1)) && ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y+1][x] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "South";
                     y         = y + 1;
@@ -151,10 +144,7 @@ public class Maze
                 //check bounds, then against x+1 (east). Set new direction.
                 else if ((x < (maze[y].length - 1)) && ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x+1] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "East";
                     x         = x + 1;
@@ -163,10 +153,7 @@ public class Maze
                 //check bounds, then against y-1 (north). Set new direction.
                 else if ((y > 0) && ((maze[y - 1][x] == 1) || (maze[y - 1][x] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y-1][x] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "North";
                     y         = y - 1;
@@ -190,10 +177,7 @@ public class Maze
                 //check bounds, then against y+1 (north). Set new direction.
                 else if ((y > 0) && ((maze[y - 1][x] == 1) || (maze[y - 1][x] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y-1][x] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "North";
                     y         = y - 1;
@@ -202,10 +186,7 @@ public class Maze
                 //check bounds, then against x-1 (west). Set new direction.
                 else if ((x > 0) && ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x-1] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "West";
                     x         = x - 1;
@@ -214,10 +195,7 @@ public class Maze
                 //check bounds, then against y-1 (south). Set new direction.
                 else if ((y < (maze.length - 1)) && ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y+1][x] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "South";
                     y         = y + 1;
@@ -226,10 +204,7 @@ public class Maze
                 //check bounds, then against x+1 (east). Set new direction.
                 else if ((x < (maze[y].length - 1)) && ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x+1] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "East";
                     x         = x + 1;
@@ -253,10 +228,7 @@ public class Maze
                 //check bounds, then against x+1 (east). Set new direction.
                 else if ((x < (maze[y].length - 1)) && ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x+1] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "East";
                     x         = x + 1;
@@ -265,10 +237,7 @@ public class Maze
                 //check bounds, then against y-1 (north). Set new direction.
                 else if ((y > 0) && ((maze[y - 1][x] == 1) || (maze[y -1][x] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y-1][x] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "North";
                     y         = y - 1;
@@ -277,10 +246,7 @@ public class Maze
                 //check bounds, then against x-1 (west). Set new direction.
                 else if ((x > 0) && ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x-1] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "West";
                     x         = x - 1;
@@ -289,10 +255,7 @@ public class Maze
                 //check bounds, then against y+1 (south). Set new direction.
                 else if ((y < (maze.length - 1)) && ((maze[y + 1][x] == 1) || (maze[y + 1][x] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y+1][x] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "South";
                     y         = y + 1;
@@ -328,10 +291,7 @@ public class Maze
                 //check bounds, then against x+1 (east). Set new direction.
                 else if ((x < (maze[y].length - 1)) && ((maze[y][x + 1] == 1) || (maze[y][x + 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x+1] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "East";
                     x         = x + 1;
@@ -340,10 +300,8 @@ public class Maze
                 //check bounds, then against y+1 (north). Set new direction.
                 else if ((y > 0) && ((maze[y - 1][x] == 1) || (maze[y - 1][x] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y-1][x] == 3){
-                        maze[y][x] = 1;
-                    }
+
+
 
                     direction = "North";
                     y         = y - 1;
@@ -352,10 +310,7 @@ public class Maze
                 //check bounds, then against x-1 (west). Set new direction.
                 else if ((x > 0) && ((maze[y][x - 1] == 1) || (maze[y][x - 1] == 3)))
                 {
-                    //check for previous location
-                    if (maze[y][x-1] == 3){
-                        maze[y][x] = 1;
-                    }
+
 
                     direction = "West";
                     x         = x - 1;

@@ -112,12 +112,13 @@ public class MazeGUI extends Application
         MediaPlayer finishedPlayer = new MediaPlayer(findPathSound);
 
 
+            bgPlayer.play();
 
         if (maze.isFirstTime())
         {
             maze.displayFirstTime();
 
-            bgPlayer.play();
+
 
         }
 
