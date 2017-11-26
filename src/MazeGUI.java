@@ -116,7 +116,7 @@ public class MazeGUI extends Application
         if (maze.isFirstTime())
         {
             maze.displayFirstTime();
-            //HP Theme Audio
+
             bgPlayer.play();
 
         }
@@ -317,6 +317,7 @@ public class MazeGUI extends Application
             border.getChildren().clear();
             border.getChildren().add(finalPane);
             border.setCenter(finalPane);
+            finishedPlayer.play();
         });
 
         finalPane.setOnMouseClicked(event ->
