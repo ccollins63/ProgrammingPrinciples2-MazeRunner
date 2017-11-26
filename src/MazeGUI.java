@@ -42,7 +42,7 @@ public class MazeGUI extends Application
         ImageView startHarryPotter = new ImageView(new Image("images/harrypotter.png"));
         startHarryPotter.setFitWidth(100);
         startHarryPotter.setFitHeight(170);
-        Text txtStart = new Text("Start");
+        Text txtStart = new Text("Tri Wizard Cup");
         txtStart.setFont(Font.font("Verdana", 40));
         txtStart.setFill(Color.WHITE);
         topLeftBox.getChildren().addAll(startHarryPotter, txtStart);
@@ -76,15 +76,10 @@ public class MazeGUI extends Application
         harryPotterMouseStart.setFitHeight(20);
 
         //Harry Potter background audio that plays while the program is running
-        Media media = new Media(new File("/Users/CruiseGatzman/IdeaProjects/MazeRunner1/src/images/HPtheme.mp3").toURI().toString());
+        Media media = new Media(new File("src/sounds/HPtheme.mp3").toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         MediaView mediaView = new MediaView(mediaPlayer);
         bottomBox.getChildren().add(mediaView);
-
-
-
-
-
 
 
         if (maze.isFirstTime())
