@@ -101,23 +101,26 @@ public class MazeGUI extends Application
         Media backgroundTheme = new Media(new File("src/sounds/HPtheme.mp3").toURI().toString());
         MediaPlayer bgPlayer = new MediaPlayer(backgroundTheme);
 
-
+        //Sound for each step taken
         Media stepSound = new Media(new File("src/sounds/StepSound.mp3").toURI().toString());
         MediaPlayer stepPlayer = new MediaPlayer(stepSound);
 
+        //Sound for find path button
         Media findPathSound = new Media(new File("src/sounds/FindPath.wav").toURI().toString());
         MediaPlayer findPathPlayer = new MediaPlayer(findPathSound);
 
+        //Finished cheering sound
         Media finishedSound = new Media(new File("src/sounds/FinishCheer.wav").toURI().toString());
         MediaPlayer finishedPlayer = new MediaPlayer(findPathSound);
 
 
-            bgPlayer.play();
+
 
         if (maze.isFirstTime())
         {
             maze.displayFirstTime();
 
+            bgPlayer.play();
         }
 
         for (int row = 0; row < maze.getMaze().length; row++)
