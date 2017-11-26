@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.io.File;
+import java.io.FileInputStream;
 
 public class MazeGUI extends Application
 {
@@ -36,14 +37,17 @@ public class MazeGUI extends Application
         gridPane.setBackground(new Background(mazeBackground));
         border.setCenter(gridPane);
 
+        //load new font type for HP font
+        final Font HPFONT = Font.loadFont(new FileInputStream(new File("src/fonts/HARRYP__.TTF")), 80);
+
         HBox topLeftBox = new HBox();
         topLeftBox.setBackground(new Background(controlBackground));
         topLeftBox.setAlignment(Pos.CENTER_LEFT);
         ImageView startHarryPotter = new ImageView(new Image("images/harrypotter.png"));
-        startHarryPotter.setFitWidth(100);
-        startHarryPotter.setFitHeight(170);
+        startHarryPotter.setFitWidth(70);
+        startHarryPotter.setFitHeight(120);
         Text txtStart = new Text("Tri Wizard Cup");
-        txtStart.setFont(Font.font("Verdana", 40));
+        txtStart.setFont(HPFONT);
         txtStart.setFill(Color.WHITE);
         topLeftBox.getChildren().addAll(startHarryPotter, txtStart);
         border.setTop(topLeftBox);
@@ -66,7 +70,7 @@ public class MazeGUI extends Application
         triWizardCup.setFitHeight(100);
         triWizardCup.setFitWidth(100);
         Text txtFinish = new Text("Finish");
-        txtFinish.setFont(Font.font("Verdana", 40));
+        txtFinish.setFont(HPFONT);
         txtFinish.setFill(Color.WHITE);
         bottomBox.getChildren().addAll(triWizardCup, txtFinish);
         border.setBottom(bottomBox);
