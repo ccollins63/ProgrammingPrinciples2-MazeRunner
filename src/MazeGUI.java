@@ -3,6 +3,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaView;
@@ -25,10 +26,14 @@ public class MazeGUI extends Application
     {
         Maze maze = new Maze(MazeLoader.manualMaze());
 
+        //set background values
         BackgroundFill mazeBackground = new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(1),
                 new Insets(0.0,0.0,0.0,0.0));
 
         BackgroundFill controlBackground = new BackgroundFill(Color.DARKGREY, new CornerRadii(1),
+                new Insets(0.0,0.0,0.0,0.0));
+
+        BackgroundFill finalBackground = new BackgroundFill(Color.DARKRED, new CornerRadii(1),
                 new Insets(0.0,0.0,0.0,0.0));
 
         BorderPane border = new BorderPane();
@@ -52,6 +57,7 @@ public class MazeGUI extends Application
         topLeftBox.getChildren().addAll(startHarryPotter, txtStart);
         border.setTop(topLeftBox);
 
+        //buttons pane
         VBox rightBox = new VBox();
         rightBox.setBackground(new Background(controlBackground));
         rightBox.setAlignment(Pos.CENTER);
@@ -62,18 +68,30 @@ public class MazeGUI extends Application
         Button btQuit       = new Button("Quit");
         rightBox.getChildren().addAll(btStep, btFindPath, btQuit);
         border.setRight(rightBox);
+        //"Finished" button that pane will transition to
+        Button btFinished   = new Button("Finished!");
 
         HBox bottomBox = new HBox();
         bottomBox.setBackground(new Background(controlBackground));
         bottomBox.setAlignment(Pos.CENTER);
-        ImageView triWizardCup = new ImageView(new Image("images/triwizardcup.png"));
-        triWizardCup.setFitHeight(100);
-        triWizardCup.setFitWidth(100);
         Text txtFinish = new Text("Finish");
         txtFinish.setFont(HPFONT);
         txtFinish.setFill(Color.WHITE);
-        bottomBox.getChildren().addAll(triWizardCup, txtFinish);
+        bottomBox.getChildren().addAll(txtFinish);
         border.setBottom(bottomBox);
+
+        //final pane to set "finished"
+        VBox finalPane = new VBox();
+        finalPane.setAlignment(Pos.CENTER);
+        finalPane.setBackground(new Background(finalBackground));
+        Label finalText = new Label("Winner!");
+        finalText.setFont(HPFONT);
+        finalText.setTextFill(Color.WHITE);
+        ImageView triWizardCup = new ImageView(new Image("images/triwizardcup.png"));
+        triWizardCup.setFitHeight(100);
+        triWizardCup.setFitWidth(100);
+        finalPane.getChildren().addAll(finalText,triWizardCup);
+
 
         ImageView harryPotterMouseStart = new ImageView(new Image("images/harrypotter.png"));
         harryPotterMouseStart.setFitWidth(20);
@@ -189,6 +207,11 @@ public class MazeGUI extends Application
                     }
                 }
             }
+            //check for isFinished. Transition scene if so
+            if (maze.isFinished()){
+                rightBox.getChildren().clear();
+                rightBox.getChildren().add(btFinished);
+            }
         });
 
         btFindPath.setOnAction(event ->
@@ -262,9 +285,26 @@ public class MazeGUI extends Application
                     }
                 }
             }
+            //check for isFinished. Transition scene if so
+            if (maze.isFinished()){
+                rightBox.getChildren().clear();
+                rightBox.getChildren().add(btFinished);
+            }
         });
 
         btQuit.setOnAction(event ->
+        {
+            primaryStage.close();
+        });
+
+        btFinished.setOnAction(event ->
+        {
+            border.getChildren().clear();
+            border.getChildren().add(finalPane);
+            border.setCenter(finalPane);
+        });
+
+        finalPane.setOnMouseClicked(event ->
         {
             primaryStage.close();
         });
