@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.MediaView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
@@ -12,6 +13,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.Node;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
 
 public class MazeGUI extends Application
 {
@@ -71,9 +75,23 @@ public class MazeGUI extends Application
         harryPotterMouseStart.setFitWidth(20);
         harryPotterMouseStart.setFitHeight(20);
 
+        //Harry Potter background audio that plays while the program is running
+        Media media = new Media(new File("/Users/CruiseGatzman/IdeaProjects/MazeRunner1/src/images/HPtheme.mp3").toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        MediaView mediaView = new MediaView(mediaPlayer);
+        bottomBox.getChildren().add(mediaView);
+
+
+
+
+
+
+
         if (maze.isFirstTime())
         {
             maze.displayFirstTime();
+            //HP Theme Audio
+            mediaPlayer.play();
         }
 
         for (int row = 0; row < maze.getMaze().length; row++)
@@ -97,6 +115,7 @@ public class MazeGUI extends Application
                 }
             }
         }
+
 
 
         btStep.setOnAction(event ->
