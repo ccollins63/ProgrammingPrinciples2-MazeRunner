@@ -98,17 +98,27 @@ public class MazeGUI extends Application
         harryPotterMouseStart.setFitHeight(20);
 
         //Harry Potter background audio that plays while the program is running
-        Media media = new Media(new File("src/sounds/HPtheme.mp3").toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        MediaView mediaView = new MediaView(mediaPlayer);
-        bottomBox.getChildren().add(mediaView);
+        Media backgroundTheme = new Media(new File("src/sounds/HPtheme.mp3").toURI().toString());
+        MediaPlayer bgPlayer = new MediaPlayer(backgroundTheme);
+
+
+        Media stepSound = new Media(new File("src/sounds/StepSound.mp3").toURI().toString());
+        MediaPlayer stepPlayer = new MediaPlayer(stepSound);
+
+        Media findPathSound = new Media(new File("src/sounds/FindPath.wav").toURI().toString());
+        MediaPlayer findPathPlayer = new MediaPlayer(findPathSound);
+
+        Media finishedSound = new Media(new File("src/sounds/FinishCheer.wav").toURI().toString());
+        MediaPlayer finishedPlayer = new MediaPlayer(findPathSound);
+
 
 
         if (maze.isFirstTime())
         {
             maze.displayFirstTime();
             //HP Theme Audio
-            mediaPlayer.play();
+            bgPlayer.play();
+
         }
 
         for (int row = 0; row < maze.getMaze().length; row++)
@@ -137,7 +147,10 @@ public class MazeGUI extends Application
 
         btStep.setOnAction(event ->
         {
+            stepPlayer.play();
             maze.takeStep();
+
+
 
             for (int row = 0; row < maze.getMaze().length; row++)
             {
@@ -217,6 +230,8 @@ public class MazeGUI extends Application
         btFindPath.setOnAction(event ->
         {
             maze.findExit();
+            findPathPlayer.play();
+
             for (int row = 0; row < maze.getMaze().length; row++)
             {
                 for (int column = 0; column < maze.getMaze( )[row].length; column++)
@@ -313,6 +328,11 @@ public class MazeGUI extends Application
         primaryStage.setTitle("MazeRunner");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    public void createStepSound(){
+
+
     }
 
     public static void main(String[] args)
