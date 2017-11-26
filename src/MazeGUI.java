@@ -37,7 +37,7 @@ public class MazeGUI extends Application
         topLeftBox.setAlignment(Pos.CENTER_LEFT);
         ImageView startHarryPotter = new ImageView(new Image("images/harrypotter.png"));
         startHarryPotter.setFitWidth(100);
-        startHarryPotter.setFitHeight(100);
+        startHarryPotter.setFitHeight(170);
         Text txtStart = new Text("Start");
         txtStart.setFont(Font.font("Verdana", 40));
         txtStart.setFill(Color.WHITE);
@@ -82,7 +82,7 @@ public class MazeGUI extends Application
             {
                 if (maze.getMaze()[row][column] == 0)
                 {
-                    ImageView mazeWalls = new ImageView(new Image("images/gw4.png"));
+                    ImageView mazeWalls = new ImageView(new Image("images/gw4.jpg"));
                     mazeWalls.setFitWidth(20);
                     mazeWalls.setFitHeight(20);
 
