@@ -118,8 +118,6 @@ public class MazeGUI extends Application
         {
             maze.displayFirstTime();
 
-
-
         }
 
         for (int row = 0; row < maze.getMaze().length; row++)
