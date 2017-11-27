@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.Node;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -113,7 +114,9 @@ public class MazeGUI extends Application
         Media finishedSound = new Media(new File("src/sounds/FinishCheer.wav").toURI().toString());
         MediaPlayer finishedPlayer = new MediaPlayer(finishedSound);
 
-
+        Media harryPotterClip = new Media(new File("src/images/HarryPotterFinalClip.mp4").toURI().toString());
+        MediaPlayer hpClipPlayer = new MediaPlayer(harryPotterClip);
+        MediaView hpClipViewer = new MediaView(hpClipPlayer);
 
 
         if (maze.isFirstTime())
@@ -325,7 +328,12 @@ public class MazeGUI extends Application
 
         finalPane.setOnMouseClicked(event ->
         {
-            primaryStage.close();
+            bgPlayer.stop();
+            border.getChildren().clear();
+            border.setCenter(finalPane);
+            finalPane.getChildren().clear();
+            finalPane.getChildren().add(hpClipViewer);
+            hpClipPlayer.play();
         });
 
         Scene scene = new Scene(border, 850, 600);
