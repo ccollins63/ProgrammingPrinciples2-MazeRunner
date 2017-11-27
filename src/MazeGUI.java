@@ -105,6 +105,8 @@ public class MazeGUI extends Application
         //invisible line to roll credits
         Line scrollLine = new Line();
         scrollLine.setStroke(Color.TRANSPARENT);
+        //credits pane
+        BorderPane creditsPane = new BorderPane();
 
 
 
