@@ -111,7 +111,7 @@ public class MazeGUI extends Application
 
         //Finished cheering sound
         Media finishedSound = new Media(new File("src/sounds/FinishCheer.wav").toURI().toString());
-        MediaPlayer finishedPlayer = new MediaPlayer(findPathSound);
+        MediaPlayer finishedPlayer = new MediaPlayer(finishedSound);
 
 
 
@@ -149,10 +149,11 @@ public class MazeGUI extends Application
 
         btStep.setOnAction(event ->
         {
+            //make sure the sound is stopped, then play
+            stepPlayer.stop();
             stepPlayer.play();
+
             maze.takeStep();
-
-
 
             for (int row = 0; row < maze.getMaze().length; row++)
             {
@@ -316,8 +317,8 @@ public class MazeGUI extends Application
 
         btFinished.setOnAction(event ->
         {
+            bgPlayer.stop();
             border.getChildren().clear();
-            border.getChildren().add(finalPane);
             border.setCenter(finalPane);
             finishedPlayer.play();
         });
