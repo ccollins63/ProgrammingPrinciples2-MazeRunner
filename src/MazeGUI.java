@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -92,6 +93,21 @@ public class MazeGUI extends Application
         triWizardCup.setFitWidth(100);
         finalPane.getChildren().addAll(finalText,triWizardCup);
 
+        //set credits. Whoo!
+        Text txtProjectBy = new Text("Project By...");
+        txtProjectBy.setFont(Font.font("Ariel",50));
+        Text txtCam = new Text("Cam Collins");
+        txtCam.setFont(Font.font("Ariel", 40));
+        Text txtCruise = new Text("Cruise Gatzman");
+        txtCruise.setFont(Font.font("Ariel", 40));
+        Text txtNick = new Text("Nick Windham");
+        txtNick.setFont(Font.font("Ariel", 40));
+        //invisible line to roll credits
+        Line scrollLine = new Line();
+        scrollLine.setStroke(Color.TRANSPARENT);
+
+
+
 
         ImageView harryPotterMouseStart = new ImageView(new Image("images/harrypotter.png"));
         harryPotterMouseStart.setFitWidth(20);
@@ -114,7 +130,7 @@ public class MazeGUI extends Application
         Media finishedSound = new Media(new File("src/sounds/FinishCheer.wav").toURI().toString());
         MediaPlayer finishedPlayer = new MediaPlayer(finishedSound);
 
-        Media harryPotterClip = new Media(new File("src/images/HarryPotterFinalClip.mp4").toURI().toString());
+        Media harryPotterClip = new Media(new File("src/video/HarryPotterFinalClip.mp4").toURI().toString());
         MediaPlayer hpClipPlayer = new MediaPlayer(harryPotterClip);
         MediaView hpClipViewer = new MediaView(hpClipPlayer);
 
