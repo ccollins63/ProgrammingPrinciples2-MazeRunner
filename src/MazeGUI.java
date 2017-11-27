@@ -100,6 +100,7 @@ public class MazeGUI extends Application
         //Harry Potter background audio that plays while the program is running
         Media backgroundTheme = new Media(new File("src/sounds/HPtheme.mp3").toURI().toString());
         MediaPlayer bgPlayer = new MediaPlayer(backgroundTheme);
+        bgPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
         //Sound for each step taken
         Media stepSound = new Media(new File("src/sounds/StepSound.mp3").toURI().toString());
@@ -183,7 +184,7 @@ public class MazeGUI extends Application
                             }
 
                             ImageView harryPotterMouse = new ImageView(new Image("images/harrypotter.png"));
-                            harryPotterMouse.setFitWidth(20);
+                            harryPotterMouse.setFitWidth(15);
                             harryPotterMouse.setFitHeight(20);
 
                             gridPane.getChildren().add(harryPotterMouse);
@@ -332,11 +333,6 @@ public class MazeGUI extends Application
         primaryStage.setTitle("MazeRunner");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    public void createStepSound(){
-
-
     }
 
     public static void main(String[] args)
