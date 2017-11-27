@@ -42,7 +42,7 @@ public class MazeGUI extends Application
         border.setCenter(gridPane);
 
         //load new font type for HP font
-        final Font HPFONT = Font.loadFont(new FileInputStream(new File("src/fonts/HARRYP__.TTF")), 80);
+        final Font ftHPFONT = Font.loadFont(new FileInputStream(new File("src/fonts/HARRYP__.TTF")), 80);
 
         HBox topLeftBox = new HBox();
         topLeftBox.setBackground(new Background(controlBackground));
@@ -51,7 +51,7 @@ public class MazeGUI extends Application
         startHarryPotter.setFitWidth(70);
         startHarryPotter.setFitHeight(120);
         Text txtStart = new Text("Tri Wizard Cup");
-        txtStart.setFont(HPFONT);
+        txtStart.setFont(ftHPFONT);
         txtStart.setFill(Color.WHITE);
         topLeftBox.getChildren().addAll(startHarryPotter, txtStart);
         border.setTop(topLeftBox);
@@ -74,7 +74,7 @@ public class MazeGUI extends Application
         bottomBox.setBackground(new Background(controlBackground));
         bottomBox.setAlignment(Pos.CENTER);
         Text txtFinish = new Text("Finish");
-        txtFinish.setFont(HPFONT);
+        txtFinish.setFont(ftHPFONT);
         txtFinish.setFill(Color.WHITE);
         bottomBox.getChildren().addAll(txtFinish);
         border.setBottom(bottomBox);
@@ -84,7 +84,7 @@ public class MazeGUI extends Application
         finalPane.setAlignment(Pos.CENTER);
         finalPane.setBackground(new Background(finalBackground));
         Label finalText = new Label("Winner!");
-        finalText.setFont(HPFONT);
+        finalText.setFont(ftHPFONT);
         finalText.setTextFill(Color.WHITE);
         ImageView triWizardCup = new ImageView(new Image("images/triwizardcup.png"));
         triWizardCup.setFitHeight(100);
