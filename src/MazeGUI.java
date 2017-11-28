@@ -421,7 +421,7 @@ public class MazeGUI extends Application
                 millis++;
 
                 //once 33seconds, do transition
-                if (millis == 3000){
+                if (millis == 2400){
                     //kill audio feed from video
                     hpClipPlayer.stop();
 
@@ -442,34 +442,39 @@ public class MazeGUI extends Application
                 }
 
                 //check for 1 second after, animate credit roll
-                if (millis >= 3300){
+                if (millis >= 2700){
                     pathPresentedBy.play();
                 }
-                if (millis >= 3400){
+                if (millis >= 2800){
                     pathCam.play();
                 }
-                if (millis >= 3550){
+                if (millis >= 2850){
                     pathCruise.play();
                 }
-                if (millis >= 3600){
+                if (millis >= 2900){
                     pathNick.play();
                 }
-                if(millis >= 3900){
+                if(millis >= 3400){
                     pathHim.play();
                 }
-                if (millis >= 4100){
+                if (millis >= 3600){
                     pathHim.stop();
                 }
 
                 //set volume to fade, exit stage
-                if (millis == 5000){
-                    for (int i = 100; i >= 0; i--){
-                        creditPlayer.setVolume(i/100);
-                        if (i == 0){
-                            primaryStage.close();
+                if (millis == 4100){
+                    int secondCounter = millis%100;
+                    int index = 10;
+                    while (index != 0){
+                        //decrement volume over seconds.
+                        creditPlayer.setVolume(index/10);
+                        //check for a second passing, decrement if so
+                        if (secondCounter == 0){
+                            index--;
                         }
                     }
-
+                    //close when out of while loop
+                    primaryStage.close();
                 }
             }
         };

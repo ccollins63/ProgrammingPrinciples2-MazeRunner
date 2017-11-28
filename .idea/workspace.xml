@@ -48,12 +48,12 @@
       <file leaf-file-name="MazeGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MazeGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="428" column="40" lean-forward="true" selection-start-line="428" selection-start-column="40" selection-end-line="428" selection-end-column="40" />
+            <state relative-caret-position="840">
+              <caret line="465" column="51" lean-forward="true" selection-start-line="465" selection-start-column="51" selection-end-line="465" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#17000#19146#0" expanded="true" />
-                <element signature="e#19145#19146#0" expanded="true" />
+                <element signature="e#17000#19443#0" expanded="true" />
+                <element signature="e#19442#19443#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -715,7 +715,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511815019904</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Almost-working credits. Needs loading improvements.">
+      <created>1511825995143</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1511825995143</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -819,7 +826,8 @@
     <MESSAGE value="Added more sound files" />
     <MESSAGE value="Cleaned SFX, cleaned code, set BGM to repeat." />
     <MESSAGE value="Uploaded video, updated location. Start work for credits." />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploaded video, updated location. Start work for credits." />
+    <MESSAGE value="Almost-working credits. Needs loading improvements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost-working credits. Needs loading improvements." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -911,8 +919,8 @@
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17000#19146#0" expanded="true" />
-            <element signature="e#19145#19146#0" expanded="true" />
+            <element signature="e#17000#19443#0" expanded="true" />
+            <element signature="e#19442#19443#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -942,8 +950,8 @@
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17000#19146#0" expanded="true" />
-            <element signature="e#19145#19146#0" expanded="true" />
+            <element signature="e#17000#19443#0" expanded="true" />
+            <element signature="e#19442#19443#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -978,8 +986,8 @@
           <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17000#19146#0" expanded="true" />
-            <element signature="e#19145#19146#0" expanded="true" />
+            <element signature="e#17000#19443#0" expanded="true" />
+            <element signature="e#19442#19443#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1038,12 +1046,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MazeGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="428" column="40" lean-forward="true" selection-start-line="428" selection-start-column="40" selection-end-line="428" selection-end-column="40" />
+        <state relative-caret-position="840">
+          <caret line="465" column="51" lean-forward="true" selection-start-line="465" selection-start-column="51" selection-end-line="465" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17000#19146#0" expanded="true" />
-            <element signature="e#19145#19146#0" expanded="true" />
+            <element signature="e#17000#19443#0" expanded="true" />
+            <element signature="e#19442#19443#0" expanded="true" />
           </folding>
         </state>
       </provider>
